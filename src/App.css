@@ -1,0 +1,136 @@
+.Editpopup_container,
+.LoaderContainer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+  display: grid;
+  place-content: center;
+}
+
+.Editpopup_container::before,
+.LoaderContainer::before {
+  content: "";
+  background-color: black;
+  opacity: 0.3;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.Editpopup {
+  position: relative;
+  width: 380px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  animation: Popup_animation 0.3s ease-out 1 normal forwards;
+}
+
+.closingAnimation {
+  animation: Popup_closing_animation 0.3s ease-out 1 normal forwards;
+}
+
+@keyframes Popup_animation {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1.0);
+  }
+
+}
+
+@keyframes Popup_closing_animation {
+  0% {
+    transform: scale(1.0);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+.close_btn {
+  position: absolute;
+  right: 0px;
+  margin-right: 15px;
+}
+
+.Loader .spinner-grow {
+  border: 4px solid white;
+}
+
+.alertContainer {
+  position: sticky;
+  top: 0;
+  height: 0;
+  display: grid;
+  place-content: center;
+  background-color: red;
+  animation: alert_animation 0.5s ease-out 1 normal forwards;
+}
+
+@keyframes alert_animation {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.alertbox {
+  width: 300px;
+  position: relative;
+  height: 70px;
+  overflow: hidden;
+  background-color: white;
+  border: 1px solid rgb(73, 73, 73);
+  border-radius: 8px;
+  margin-top: 70px;
+  padding-inline: 10px;
+}
+
+.alertbox .timer {
+  position: absolute;
+  background-color: #198754;
+  height: 6px;
+  width: 0%;
+  bottom: 0;
+  left: 0;
+  animation: Alert_timer 1.5s ease-in 1 normal forwards;
+}
+
+@keyframes Alert_timer {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.PageView {
+  border: 1px solid rgb(141, 141, 141);
+  border-radius: 15px;
+  width: 450px;
+  padding: 25px;
+  box-shadow: 5px 5px 5px #dedede;
+}
+
+.PageContainer {
+  width: 100vw;
+  overflow: hidden;
+  height: 90vh;
+  display: grid;
+  place-content: center;
+}
