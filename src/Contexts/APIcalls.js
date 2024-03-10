@@ -1,4 +1,4 @@
-const hostname = 'https://inotebook-backend-liart.vercel.app'
+const hostname = 'https://i-notebook-backend-gray.vercel.app'
 
 // /api/notes/fetchallnotes
 
