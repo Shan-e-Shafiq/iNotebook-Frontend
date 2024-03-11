@@ -3,13 +3,22 @@ import './App.css'
 import Navbar from './Components/Navbar'
 import Home from './Components/Home'
 import About from './Components/About'
-import GlobalContext from './Contexts/GlobalContext'
+import GlobalContext, { NoteContext } from './Contexts/GlobalContext'
 import LoginComponent from './Components/LoginComponent'
 import SignupComponent from './Components/SignupComponent'
+import { useEffect } from 'react'
 
 export default function App() {
+  async function Connect_to_API() {
+    let response = await fetch("https://i-notebook-backend-gray.vercel.app/")
+    let data = response.json()
+    return data
+  }
 
   const location = useLocation()
+  useEffect(() => {
+    Connect_to_API()
+  }, [])
 
   return (
     <>
